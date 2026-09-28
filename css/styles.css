@@ -56,9 +56,9 @@ body {
 
 
 #Home:checked ~ #Content-Site #content-home {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
-#General-info ~#Content-Site #content-info {
-
+#General-info:checked ~ #Content-Site #content-info {
+  transform: translateX(-100%);
 }
