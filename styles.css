@@ -1,0 +1,21 @@
+:root{
+  --fon-color: #1b1b1b;
+  --color-accent: #f56e0f;
+  --color-accent-shadow: rgba(245, 110, 15, 0.7);
+  --fon-color-2: #262626;
+  --text-color: #878787;
+}
+
+body {
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--fon-color);
+  color: var(--color-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  user-select: none;
+}
