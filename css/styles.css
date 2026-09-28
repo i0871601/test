@@ -43,6 +43,10 @@ body {
 
     .group {
       position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
     }
 
     .group div {
@@ -58,29 +62,34 @@ body {
       border-radius: 0.5rem;
       gap: 0.5rem;
       transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+
+      &::before {
+        content: '';
+        position: absolute;
+        
+      }
     }
 
-
-  }
-  #menu p, #menu label {
-    pointer-events: all;
-    cursor: pointer;
-    margin: 0;
-    color: var(--fon-color);
-    white-space: nowrap;
-    border-bottom: 0.15rem solid var(--color-accent);
-    border-top: 0.15rem solid var(--color-accent);
-    transition: border 0.5s ease-in-out;
-  }
-
-  #menu p:hover, #menu label:hover {
-    border-bottom: 0.15rem solid var(--fon-color);
-  }
-
-  #menu .group:hover div {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s;
+    p, label {
+      pointer-events: all;
+      cursor: pointer;
+      margin: 0;
+      color: var(--fon-color);
+      white-space: nowrap;
+      border-bottom: 0.15rem solid var(--color-accent);
+      border-top: 0.15rem solid var(--color-accent);
+      transition: border 0.5s ease-in-out;
+    }
+    
+    p:hover, #menu label:hover {
+      border-bottom: 0.15rem solid var(--fon-color);
+    }
+    
+    .group:hover div {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0s;
+    }
   }
 }
 
