@@ -73,7 +73,7 @@ body {
     border-bottom: 0.15rem solid var(--fon-color);
   }
 
-  #menu p:hover + div{
+  #menu p:focus-within + div{
     opacity: 1;
     visibility: visible;
     transition-delay: 0s;
