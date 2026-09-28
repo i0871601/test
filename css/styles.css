@@ -53,6 +53,7 @@ body {
       padding: 0.5rem;
       border-radius: 0.5rem;
       gap: 0.5rem;
+      transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
     }
 
 
@@ -72,9 +73,10 @@ body {
     border-bottom: 0.15rem solid var(--fon-color);
   }
 
-  #menu .element:hover div{
+  #menu p:hover + div{
     opacity: 1;
     visibility: visible;
+    transition-delay: 0s;
   }
 }
 
