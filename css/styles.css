@@ -72,7 +72,7 @@ body {
     border-bottom: 0.15rem solid var(--fon-color);
   }
 
-  #menu .element:hover + div{
+  #menu .element:hover div{
     opacity: 1;
     visibility: visible;
   }
