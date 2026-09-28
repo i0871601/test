@@ -70,7 +70,7 @@ body {
     border-bottom: 0.15rem solid var(--fon-color);
   }
 
-  #menu p:hover + div {
+  #menu p:hover + div, .group div:hover {
     opacity: 1;
   }
 }
