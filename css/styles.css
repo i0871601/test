@@ -41,6 +41,10 @@ body {
     align-items: center;
     gap: 1.5rem;
 
+    .group {
+      position: relative;
+    }
+
     .group div {
       opacity: 0;
       visibility: hidden;
@@ -73,7 +77,7 @@ body {
     border-bottom: 0.15rem solid var(--fon-color);
   }
 
-  #menu p:focus-within + div{
+  #menu .group:hover {
     opacity: 1;
     visibility: visible;
     transition-delay: 0s;
