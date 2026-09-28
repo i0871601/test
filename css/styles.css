@@ -60,6 +60,10 @@ body {
   #menu p:hover, #menu label:hover {
     border-bottom: 0.15rem solid var(--fon-color);
   }
+
+  #menu p:hover + div {
+    opacity: 1;
+  }
 }
 
 #Content-Site {
