@@ -66,30 +66,33 @@ body {
       &::before {
         content: '';
         position: absolute;
-        
+        height: 2rem;
+        width: 100%;
+        left: 0;
+        top: -1rem;
       }
     }
-
+    
     p, label {
-      pointer-events: all;
-      cursor: pointer;
-      margin: 0;
-      color: var(--fon-color);
-      white-space: nowrap;
-      border-bottom: 0.15rem solid var(--color-accent);
-      border-top: 0.15rem solid var(--color-accent);
-      transition: border 0.5s ease-in-out;
-    }
-    
-    p:hover, #menu label:hover {
-      border-bottom: 0.15rem solid var(--fon-color);
-    }
-    
-    .group:hover div {
-      opacity: 1;
-      visibility: visible;
-      transition-delay: 0s;
-    }
+        pointer-events: all;
+        cursor: pointer;
+        margin: 0;
+        color: var(--fon-color);
+        white-space: nowrap;
+        border-bottom: 0.15rem solid var(--color-accent);
+        border-top: 0.15rem solid var(--color-accent);
+        transition: border 0.5s ease-in-out;
+      }
+      
+      p:hover, #menu label:hover {
+        border-bottom: 0.15rem solid var(--fon-color);
+      }
+      
+      .group:hover div {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+      }
   }
 }
 
