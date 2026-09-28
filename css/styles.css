@@ -18,6 +18,7 @@ body {
   flex-direction: column;
   position: relative;
   user-select: none;
+  font-family: 'Lato', sans-serif;
 }
 
 .input {
@@ -47,9 +48,17 @@ body {
 
 
   }
-  #menu label {
+  #menu p, #menu label {
     pointer-events: all;
     cursor: pointer;
+    margin: 0;
+    color: var(--fon-color);
+    border-bottom: 0.15rem solid var(--color-accent);
+    transition: border 0.5s ease-in-out;
+  }
+
+  #menu p:hover, #menu label:hover {
+    border-bottom: 0.15rem solid var(--fon-color);
   }
 }
 
