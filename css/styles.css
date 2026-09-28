@@ -43,6 +43,7 @@ body {
 
     .group div {
       opacity: 0;
+      visibility: hidden;
       position: absolute;
       top: 4rem;
       display: flex;
@@ -61,6 +62,7 @@ body {
     cursor: pointer;
     margin: 0;
     color: var(--fon-color);
+    white-space: nowrap;
     border-bottom: 0.15rem solid var(--color-accent);
     border-top: 0.15rem solid var(--color-accent);
     transition: border 0.5s ease-in-out;
@@ -70,8 +72,9 @@ body {
     border-bottom: 0.15rem solid var(--fon-color);
   }
 
-  #menu p:hover + div, .group div:hover {
+  #menu .element:hover + div{
     opacity: 1;
+    visibility: visible;
   }
 }
 
