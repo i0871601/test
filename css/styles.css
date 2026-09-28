@@ -72,27 +72,28 @@ body {
         top: -1rem;
       }
     }
-    
+
     p, label {
-        pointer-events: all;
-        cursor: pointer;
-        margin: 0;
-        color: var(--fon-color);
-        white-space: nowrap;
-        border-bottom: 0.15rem solid var(--color-accent);
-        border-top: 0.15rem solid var(--color-accent);
-        transition: border 0.5s ease-in-out;
-      }
+      width: min-content;
+      pointer-events: all;
+      cursor: pointer;
+      margin: 0;
+      color: var(--fon-color);
+      white-space: nowrap;
+      border-bottom: 0.15rem solid var(--color-accent);
+      border-top: 0.15rem solid var(--color-accent);
+      transition: border 0.5s ease-in-out;
+    }
       
-      p:hover, #menu label:hover {
-        border-bottom: 0.15rem solid var(--fon-color);
-      }
+    p:hover, label:hover {
+      border-bottom: 0.15rem solid var(--fon-color);
+    }
       
-      .group:hover div {
-        opacity: 1;
-        visibility: visible;
-        transition-delay: 0s;
-      }
+    .group:hover div {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0s;
+    }
   }
 }
 
