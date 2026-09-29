@@ -150,15 +150,16 @@ body {
     position: relative;
 
     #button-menu {
-      height: 50%;
-      width: 2.5rem;
+      height: 45%;
+      width: 2.3rem;
       cursor: pointer;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       margin: 0 1rem 0 0;
       position: relative;
+      gap: 0.3rem;
 
       span {
         display: block;
@@ -166,6 +167,7 @@ body {
         height: 0.25rem;
         background-color: var(--fon-color);
         border-radius: 0.25rem;
+        transition: transform 0.5s ease-in-out;
       }
 
     }
@@ -218,12 +220,9 @@ body {
       opacity: 1;
       padding: 0 0 0.5rem 0;
       max-height: min-content;
-      transition: max-height 0s 0.5s;
     }
 
     #menu-button:checked ~ #button-menu {
-      justify-content: space-between;
-
       span {
         position: absolute;
       }
