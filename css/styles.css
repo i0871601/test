@@ -85,7 +85,7 @@ body {
       transition: border 0.5s ease-in-out;
     }
       
-    .sections:hover p, .sections:hover label {
+    p:hover, label:hover {
       border-bottom: 0.15rem solid var(--fon-color);
     }
       
