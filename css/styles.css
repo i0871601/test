@@ -157,6 +157,7 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+      margin: 0 0.5rem 0 0;
 
       span {
         display: block;
@@ -176,9 +177,11 @@ body {
       background-color: var(--color-accent);
       flex-direction: column;
       width: 100%;
+      padding: 0 0 0.5rem 0;
       overflow: hidden;
       max-height: 0;
       opacity: 0;
+      transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
 
       .sections {
         flex-direction: column;
@@ -208,6 +211,11 @@ body {
         visibility: visible;
         transition-delay: 0s;
       }
+    }
+
+    #menu-button:checked ~ #menu {
+      opacity: 1;
+      max-height: min-content;
     }
   }
 }
