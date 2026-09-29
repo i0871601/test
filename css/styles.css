@@ -163,13 +163,23 @@ body {
           width: 100%;
           padding: 0;
           align-items: center;
-          margin: 0.5rem 0 0 0;
-        }
+          margin-top: 0.5rem;
+          max-height: 0;
+          transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out;
 
-        &::before {
-          width: 0;
-          height: 0;
+          &::before {
+            width: 0;
+            height: 0;
+          }
         }
+      }
+
+      .sections:hover div {
+        margin-top: 0.5rem;
+        max-height: 100%;
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
       }
     }
   }
