@@ -150,8 +150,8 @@ body {
     position: relative;
 
     #button-menu {
-      height: 55%;
-      aspect-ratio: 1/1;
+      height: 50%;
+      width: 2.5rem;
       cursor: pointer;
       display: flex;
       flex-direction: column;
@@ -218,6 +218,19 @@ body {
       padding: 0 0 0.5rem 0;
       max-height: min-content;
       transition: max-height 0s 0.5s;
+    }
+
+    #menu-button:checked ~ #button-menu {
+      #line1 {
+      }
+
+      #line2 {
+
+      }
+
+      #line3 {
+        
+      }
     }
   }
 }
