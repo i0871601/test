@@ -207,7 +207,7 @@ body {
         }
       }
 
-      .sections:focus div {
+      .sections:hover div {
         margin-top: 0.5rem;
         max-height: 100%;
         opacity: 1;
