@@ -175,6 +175,11 @@ body {
         top: 0;
       }
 
+      #line2 {
+        opacity: 1;
+        transition: opacity 0.5s 0.1s;
+      }
+
       #line3 {
         bottom: 0;
       }
