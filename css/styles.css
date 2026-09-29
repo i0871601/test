@@ -177,11 +177,11 @@ body {
       background-color: var(--color-accent);
       flex-direction: column;
       width: 100%;
-      padding: 0 0 0.5rem 0;
+      padding: 0 0 0 0;
       overflow: hidden;
       max-height: 0;
       opacity: 0;
-      transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
 
       .sections {
         flex-direction: column;
@@ -215,6 +215,7 @@ body {
 
     #menu-button:checked ~ #menu {
       opacity: 1;
+      padding: 0 0 0.5rem 0;
       max-height: min-content;
     }
   }
