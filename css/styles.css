@@ -141,7 +141,17 @@ body {
 }
 
 @media (orientation: portrait) {
+  #menu-bar {
+    position: relative;
+  }
+
   #menu {
-    
+    height: min-content;
+    position: absolute;
+    top: 3.5rem;
+    z-index: 7;
+    background-color: var(--color-accent);
+    flex-direction: column;
+    width: 100%;
   }
 }
