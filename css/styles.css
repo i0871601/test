@@ -35,7 +35,7 @@ body {
   flex-direction: row;
 
   #Text-Logo {
-    margin: 0 0 0 0.5rem;
+    margin: 0 0 0 1rem;
   }
 
   #menu {
@@ -43,7 +43,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 0 0.5rem 0 0;
+    margin: 0 1.5rem 0 0;
     gap: 1.5rem;
 
     .sections {
@@ -157,7 +157,7 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      margin: 0 0.5rem 0 0;
+      margin: 0 1rem 0 0;
 
       span {
         display: block;
@@ -217,6 +217,7 @@ body {
       opacity: 1;
       padding: 0 0 0.5rem 0;
       max-height: min-content;
+      transition: max-height 0s 0.5s;
     }
   }
 }
