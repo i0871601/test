@@ -143,15 +143,34 @@ body {
 @media (orientation: portrait) {
   #menu-bar {
     position: relative;
-  }
 
-  #menu {
-    height: min-content;
-    position: absolute;
-    top: 3.5rem;
-    z-index: 7;
-    background-color: var(--color-accent);
-    flex-direction: column;
-    width: 100%;
+    #menu {
+      height: min-content;
+      position: absolute;
+      top: 3.5rem;
+      z-index: 7;
+      background-color: var(--color-accent);
+      flex-direction: column;
+      width: 100%;
+
+      .sections {
+        flex-direction: column;
+        width: 100%;
+
+        div {
+          position: relative;
+          top: 0;
+          width: 100%;
+          padding: 0;
+          align-items: center;
+          margin: 0.5rem 0 0 0;
+        }
+
+        &::before {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
   }
 }
