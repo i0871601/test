@@ -62,3 +62,19 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('menu_mobile').innerHTML = menuHTML;
     document.getElementById('Content-Site').insertAdjacentHTML('beforeend', contentHTML);
 });
+
+document.addEventListener('change', (e) => {
+    if (e.target.name === 'trigger') {
+        const activeInputId = e.target.id;
+        
+        document.querySelectorAll('.menu-item-label, .menu-sub-item-label, .content').forEach(el => {
+            el.classList.remove('active');
+        });
+        
+        const activeLabel = document.querySelector(`label[for="${activeInputId}"]`);
+        if (activeLabel) activeLabel.classList.add('active');
+        
+        const activeContent = document.getElementById(`content-${activeInputId}`);
+        if (activeContent) activeContent.classList.add('active');
+    }
+});
