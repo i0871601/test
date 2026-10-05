@@ -132,6 +132,9 @@ body {
     display: none;
   }
 }
+#menu label:has(input:checked) {
+  background-color: aqua;
+}
 
 #Content-Site {
   width: 100%;
