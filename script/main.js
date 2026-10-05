@@ -29,10 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const groupBlockHTML = `
-                <label for="${groupInputId}" class="menu-group-label">${item.name}</label>
-                <div class="dropdown-content">
-                    ${subItemsHTML}
-                </div>
+                <label for="${groupInputId}" class="menu-group-label">
+                    <span>${item.name}</span>
+                    <div class="dropdown-content">
+                        ${subItemsHTML}
+                    </div>
+                </label>
             `;
 
             menuHTML += groupBlockHTML;
@@ -42,8 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const contentId = `content-${triggerId}`;
 
             let itemMenuHTML = '';
-            if (item.link) itemMenuHTML = `<a href="#${contentId}" class="menu-item menu-link">${item.name}</a>\n`;
-            else {
+
+            if (item.link) {
+                itemMenuHTML = `<a href="#${contentId}" class="menu-item menu-link">${item.name}</a>\n`;
+            } else {
                 inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
                 itemMenuHTML = `<label for="${triggerId}" class="menu-item">${item.name}</label>\n`;
             }
