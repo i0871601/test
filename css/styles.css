@@ -67,6 +67,14 @@ body {
       position: relative;
     }
 
+    label, a {
+      padding: 0.5rem 0.5rem;
+      background-color: var(--fon-color);
+      color: var(--color-accent);
+      border-radius: 1rem;
+      transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    }
+
     .dropdown-content {
       position: absolute;
       display: flex;
@@ -85,6 +93,16 @@ body {
         left: 0;
         top: -1rem;
       }
+    }
+
+    label:hover {
+      background-color: var(--color-accent);
+      color: var(--fon-color);
+    }
+
+    a:focus {
+      background-color: var(--color-accent);
+      color: var(--fon-color);
     }
 
     .menu-group-label:hover div {
@@ -126,7 +144,7 @@ body {
   grid-area: contact;
   opacity: 1;
   pointer-events: auto;
-  background-color: #e0e0e0;
+  background-color: var(--color-accent);
 }
 
 #Home:checked ~ #Content-Site #content-home {
