@@ -13,7 +13,6 @@ body {
   padding: 0;
   background-color: var(--fon-color);
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
@@ -33,12 +32,19 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  position: fixed;
+  z-index: 15;
+  color: var(--fon-color);
 
   #Text-Logo {
     margin: 0 0 0 1rem;
   }
 
   #menu {
+  }
+
+  #menu_mobile {
+    display: none;
   }
 }
 
