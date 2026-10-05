@@ -1,4 +1,4 @@
-:root{
+:root {
   --fon-color: #f8fAfC;
   --color-accent: #0a2342;
   --color-accent-shadow: rgba(245, 110, 15, 0.7);
@@ -6,19 +6,24 @@
   --text-color: #878787;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
 body {
   width: 100dvw;
-  height: 100dvh;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
   background-color: var(--fon-color);
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
   position: relative;
   user-select: none;
   font-family: 'Lato', sans-serif;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .input {
@@ -34,15 +39,13 @@ body {
   align-items: center;
   flex-direction: row;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 15;
   color: var(--fon-color);
 
   #Text-Logo {
     margin: 0 0 0 1rem;
-  }
-
-  #menu {
-
   }
 
   #menu_mobile {
@@ -51,51 +54,43 @@ body {
 }
 
 #Content-Site {
-    width: 100%;
-    height: calc(100% - 3.5rem);
-    margin-top: auto;
-    display: grid;
-    flex-direction: row;
-    /* overflow: hidden; */
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:         
-    "content content content content content content content content"
-    "contact contact contact contact contact contact contact contact";
-
-  .content {
-    height: 100vh;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0s 0.5s;
-  }
-  .content:not(:last-child) {
-    grid-area: content;
-  }
-  .content:last-child {
-    grid-area: contact;
-  }
-
-  #content-home {
-    background-color: antiquewhite;
-  }
-
-  #content-info {
-    background-color: aqua;
-  }
+  width: 100%;
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "content"
+    "contact";
 }
 
+.content {
+  height: calc(100vh - 3.5rem); 
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  scroll-snap-align: start;
+  transition: opacity 0.5s ease-in-out;
+}
 
+.content:not(:last-child) {
+  grid-area: content;
+}
+
+.content:last-child {
+  grid-area: contact;
+  opacity: 1;
+  pointer-events: auto;
+  background-color: #e0e0e0;
+}
 
 #Home:checked ~ #Content-Site #content-home {
-  transform: translateX(0);
   opacity: 1;
-  transition: transform 0s 0s, opacity 0.5s 0.1s ease-in-out;
+  pointer-events: auto;
 }
 
 #General-info:checked ~ #Content-Site #content-document {
-  transform: translateX(-100%);
   opacity: 1;
-  transition: transform 0s 0s, opacity 0.5s 0.1s ease-in-out;
+  pointer-events: auto;
 }
 
 @media (orientation: portrait) {
