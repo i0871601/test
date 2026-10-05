@@ -100,15 +100,17 @@ body {
       }
 
       label {
+        border-radius: 0;
+        padding: 0;
         background-color: var(--color-accent);
         color: var(--fon-color);
-        border-bottom: 0.2rem solid var(--color-accent);
+        border-bottom: 0.15rem solid var(--color-accent);
         transition: border 0.5s ease-in-out;
 
         &:hover {
           background-color: inherit;
           color: inherit;
-          border-bottom: 0.2rem solid var(--fon-color);
+          border-bottom: 0.15rem solid var(--fon-color);
         }
       }
     }
