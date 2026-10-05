@@ -55,6 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.insertAdjacentHTML('afterbegin', inputsHTML);
     document.getElementById('menu').innerHTML = menuHTML;
-    document.getElementById('menu_mobile').innerHTML = moenuHTML;
+    document.getElementById('menu_mobile').innerHTML = menuHTML;
     document.getElementById('Content-Site').insertAdjacentHTML('beforeend', contentHTML);
 });
