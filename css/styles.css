@@ -77,10 +77,15 @@ body {
 
     .dropdown-content {
       position: absolute;
+      background-color: var(--color-accent);
+      color: var(--fon-color);
+      padding: 0.5rem;
+      border-radius: 1rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      bottom: -4.5rem;
+      bottom: -7.5rem;
+      left: 0;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
@@ -92,6 +97,19 @@ body {
         width: 100%;
         left: 0;
         top: -1rem;
+      }
+
+      label {
+        background-color: var(--color-accent);
+        color: var(--fon-color);
+        border-bottom: 0.2rem solid var(--color-accent);
+        transition: border 0.5s ease-in-out;
+
+        &:hover {
+          background-color: inherit;
+          color: inherit;
+          border-bottom: 0.2rem solid var(--fon-color);
+        }
       }
     }
 
