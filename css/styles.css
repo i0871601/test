@@ -134,7 +134,7 @@ body {
   }
 }
 #menu label:has(input:checked) {
-  background-color: aqua;
+  background-color: var(--color-accent);
 }
 
 #Content-Site {
