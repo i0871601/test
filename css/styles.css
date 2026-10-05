@@ -13,11 +13,12 @@ body {
   padding: 0;
   background-color: var(--fon-color);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   position: relative;
   user-select: none;
   font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
 }
 
 .input {
@@ -41,6 +42,7 @@ body {
   }
 
   #menu {
+
   }
 
   #menu_mobile {
@@ -49,18 +51,28 @@ body {
 }
 
 #Content-Site {
-  width: 100%;
-  height: calc(100% - 3.5rem - 7rem);
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
+      width: 100%;
+    height: calc(100% - 3.5rem);
+    margin-top: auto;
+    display: grid;
+    flex-direction: row;
+    /* overflow: hidden; */
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:         
+    "content content content content content content content content"
+    "contact contact contact contact contact contact contact contact";
 
   .content {
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    flex: 0 0 100%;
     opacity: 0;
     transition: opacity 0.5s ease-in-out, transform 0s 0.5s;
+  }
+  .content:not(:last-child) {
+    grid-area: content;
+  }
+  .content:last-child {
+    grid-area: contact;
   }
 
   #content-home {
