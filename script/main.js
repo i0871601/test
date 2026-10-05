@@ -17,9 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const subItem = GROUP[key][subKey];
                     const triggerId = `${key}-${subKey}`;
 
-                    inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
-                    
-                    subItemsHTML += `<label for="${triggerId}" class="menu-sub-item">${subItem.name}</label>\n`;
+                    if (subItem.link) {
+                        subItemsHTML += `<a href="#content-${triggerId}" class="menu-sub-item">${subItem.name}</a>\n`;
+                    } else {
+                        inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
+                        subItemsHTML += `<label for="${triggerId}" class="menu-sub-item">${subItem.name}</label>\n`;
+                    }
 
                     contentHTML += `<div class="content" id="content-${triggerId}"></div>\n`;
                 });
@@ -34,24 +37,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             menuHTML += groupBlockHTML;
 
-            if (item.mobile) {
-                mobileMenuHTML += groupBlockHTML;
-            }
-
         } else {
             const triggerId = key;
-            inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
+            const contentId = `content-${triggerId}`;
 
-            const itemLabelHTML = `<label for="${triggerId}" class="menu-item">${item.name}</label>\n`;
-            
-            menuHTML += itemLabelHTML;
+            let itemMenuHTML = '';
+            if (item.link) itemMenuHTML = `<a href="#${contentId}" class="menu-item menu-link">${item.name}</a>\n`;
+            else {
+                inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
+                itemMenuHTML = `<label for="${triggerId}" class="menu-item">${item.name}</label>\n`;
+            }
 
-            contentHTML += `<div class="content" id="content-${triggerId}"></div>\n`;
+            menuHTML += itemMenuHTML;
+            contentHTML += `<div class="content" id="${contentId}"></div>\n`;
         }
     });
 
     document.body.insertAdjacentHTML('afterbegin', inputsHTML);
     document.getElementById('menu').innerHTML = menuHTML;
-    document.getElementById('menu_mobile').innerHTML = menuHTML;
+    document.getElementById('menu_mobile').innerHTML = moenuHTML;
     document.getElementById('Content-Site').insertAdjacentHTML('beforeend', contentHTML);
 });

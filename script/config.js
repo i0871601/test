@@ -3,7 +3,7 @@ const MENU = {
     introduction: { name: 'Вступ', group: false },
     study: { name: 'Навчання', group: true },
     news: { name: 'Новини', group: false },
-    contact_info: { name: 'Контакти', group: false }
+    contact_info: { name: 'Контакти', group: false, link: true }
 };
 
 const GROUP = {
