@@ -130,7 +130,7 @@ body {
   }
 }
 
-body:has(input[name="trigger"]:checked) #menu-bar label {
+body:has(input[name="trigger"]:checked) #menu-bar #menu label {
   background-color: var(--color-accent);
   color: var(--fon-color);
 }
