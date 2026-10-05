@@ -16,15 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 Object.keys(GROUP[key]).forEach(subKey => {
                     const subItem = GROUP[key][subKey];
                     const triggerId = `${key}-${subKey}`;
+                    const contentId = `content-${triggerId}`;
 
-                    if (subItem.link) {
-                        subItemsHTML += `<a href="#content-${triggerId}" class="menu-sub-item">${subItem.name}</a>\n`;
-                    } else {
-                        inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
-                        subItemsHTML += `<label for="${triggerId}" class="menu-sub-item">${subItem.name}</label>\n`;
-                    }
+                    inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
+                    
+                    subItemsHTML += `
+                        <label for="${triggerId}" class="menu-sub-item-wrapper">
+                            <a href="#${contentId}" class="menu-sub-item">${subItem.name}</a>
+                        </label>\n`;
 
-                    contentHTML += `<div class="content" id="content-${triggerId}"></div>\n`;
+                    contentHTML += `<div class="content" id="${contentId}"></div>\n`;
                 });
             }
 
@@ -43,20 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const triggerId = key;
             const contentId = `content-${triggerId}`;
 
-            let itemMenuHTML = '';
+            inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
 
-            if (item.link) {
-                itemMenuHTML = `<a href="#${contentId}" class="menu-item menu-link">${item.name}</a>\n`;
-            } else {
-                inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
-                itemMenuHTML = `<label for="${triggerId}" class="menu-item">${item.name}</label>\n`;
-            }
+            const itemMenuHTML = `
+                <label for="${triggerId}" class="menu-item-wrapper">
+                    <a href="#${contentId}" class="menu-item">${item.name}</a>
+                </label>\n`;
 
             menuHTML += itemMenuHTML;
             contentHTML += `<div class="content" id="${contentId}"></div>\n`;
         }
     });
 
+    // Вставка згенерованої структури в DOM
     document.body.insertAdjacentHTML('afterbegin', inputsHTML);
     document.getElementById('menu').innerHTML = menuHTML;
     document.getElementById('menu_mobile').innerHTML = menuHTML;
