@@ -47,15 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
             menuHTML += itemLabelHTML;
 
             contentHTML += `<div class="content" id="content-${triggerId}"></div>\n`;
-
-            if (item.mobile) {
-                mobileMenuHTML += itemLabelHTML;
-            }
         }
     });
 
     document.body.insertAdjacentHTML('afterbegin', inputsHTML);
     document.getElementById('menu').innerHTML = menuHTML;
-    document.getElementById('menu_mobile').innerHTML = mobileMenuHTML;
+    document.getElementById('menu_mobile').innerHTML = menuHTML;
     document.getElementById('Content-Site').insertAdjacentHTML('beforeend', contentHTML);
 });
