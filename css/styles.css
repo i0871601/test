@@ -67,7 +67,7 @@ body {
       position: relative;
     }
 
-    label, a {
+    label {
       padding: 0.5rem 0.5rem;
       background-color: var(--fon-color);
       color: var(--color-accent);
@@ -96,11 +96,6 @@ body {
     }
 
     label:hover {
-      background-color: var(--color-accent);
-      color: var(--fon-color);
-    }
-
-    a:focus {
       background-color: var(--color-accent);
       color: var(--fon-color);
     }
