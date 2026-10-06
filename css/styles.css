@@ -174,10 +174,6 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
   opacity: 1;
 }
 
-#home:checked #Content-Site #content-home {
-  opacity: 1;
-}
-
 
 @media (orientation: portrait) {
   #menu-bar {
