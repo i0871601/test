@@ -251,6 +251,7 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
       max-width: 0%;
       overflow: hidden;
       flex-direction: column;
+      gap: 0;
       box-sizing: border-box;
       padding: 1rem 0rem;
       transition: max-width 0.5s ease-in-out;
@@ -264,11 +265,35 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
         display: flex;
         align-items: center;
         flex-direction: column;
+        padding: 0.5rem 0rem;
+      }
+      .menu-group-label {
+        padding: 0.5rem 0 0 0;
       }
 
       .dropdown-content {
         position: relative;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 0;
+        overflow: hidden;
+        margin: 0.5rem 0 0 0;
+        padding: 0;
+
+        .label {
+          padding: 0.5rem 0rem;
+        }
       }
+    }
+    .menu-group-label:hover .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      height: 100%;
+      transition-delay: 0;
     }
     
   }
