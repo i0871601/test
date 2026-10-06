@@ -78,8 +78,8 @@ body {
 
     .dropdown-content {
       position: absolute;
-      background-color: var(--color-accent);
-      color: var(--fon-color);
+      background: var(--fon-color);
+      box-shadow: 0 0 0.2rem var(--text-color);
       padding: 0.5rem;
       border-radius: 1rem;
       display: flex;
@@ -104,15 +104,13 @@ body {
         width: min-content;
         border-radius: 0;
         padding: 0;
-        background-color: var(--color-accent);
-        color: var(--fon-color);
-        border-bottom: 0.15rem solid var(--color-accent);
+        border-bottom: 0.15rem solid var(--fon-color);
         transition: border 0.5s ease-in-out;
 
         &:hover {
           background-color: inherit;
           color: inherit;
-          border-bottom: 0.15rem solid var(--fon-color);
+          border-bottom: 0.15rem solid var(--color-accent);
         }
       }
     }
@@ -128,10 +126,10 @@ body {
       transition-delay: 0s;
     }
 
-    .label.active:not(.dropdown-content .label) {
+    /*.label.active:not(.dropdown-content .label) {
       background-color: var(--color-accent);
       color: var(--fon-color);
-    }
+    }*/
   }
 
   #menu_mobile {
