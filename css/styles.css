@@ -104,12 +104,14 @@ body {
         width: min-content;
         border-radius: 0;
         color: var(--color-accent);
+        background-color: var(--fon-color);
         padding: 0;
         border-bottom: 0.15rem solid var(--fon-color);
         transition: border 0.5s ease-in-out;
 
         &:hover {
-          color: inherit;
+          background-color: var(--fon-color);
+          color: var(--color-accent);
           border-bottom: 0.15rem solid var(--color-accent);
         }
       }
