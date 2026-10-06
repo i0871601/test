@@ -91,6 +91,8 @@ document.addEventListener('click', (e) => {
 
             const activeContent = document.getElementById(`content-${triggerId}`);
             if (activeContent) activeContent.classList.add('active');
+
+            document.getElementById('menu-button').checked = false;
         }
     }
 });
