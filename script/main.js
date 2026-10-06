@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let inputsHTML = '';
     let menuHTML = '';
-    let mobileMenuHTML = '';
     let contentHTML = '';
 
     Object.keys(MENU).forEach(key => {
@@ -21,21 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
                     
                     subItemsHTML += `
-                        <label for="${triggerId}" class="menu-sub-item-wrapper">
+                        <div class="menu-sub-item-wrapper" data-trigger="${triggerId}">
                             <a href="#${contentId}" class="menu-sub-item">${subItem.name}</a>
-                        </label>\n`;
+                        </div>\n`;
 
                     contentHTML += `<div class="content" id="${contentId}"></div>\n`;
                 });
             }
 
             const groupBlockHTML = `
-                <label for="${groupInputId}" class="menu-group-label">
+                <div class="menu-group-label" data-group="${groupInputId}">
                     <span>${item.name}</span>
                     <div class="dropdown-content">
                         ${subItemsHTML}
                     </div>
-                </label>
+                </div>
             `;
 
             menuHTML += groupBlockHTML;
@@ -47,34 +46,45 @@ document.addEventListener('DOMContentLoaded', () => {
             inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
 
             const itemMenuHTML = `
-                <label for="${triggerId}" class="menu-item-wrapper">
+                <div class="menu-item-wrapper" data-trigger="${triggerId}">
                     <a href="#${contentId}" class="menu-item">${item.name}</a>
-                </label>\n`;
+                </div>\n`;
 
             menuHTML += itemMenuHTML;
             contentHTML += `<div class="content" id="${contentId}"></div>\n`;
         }
     });
 
-    // Вставка згенерованої структури в DOM
     document.body.insertAdjacentHTML('afterbegin', inputsHTML);
-    document.getElementById('menu').innerHTML = menuHTML;
-    document.getElementById('menu_mobile').innerHTML = menuHTML;
-    document.getElementById('Content-Site').insertAdjacentHTML('beforeend', contentHTML);
+    
+    const menuDesktop = document.getElementById('menu');
+    const menuMobile = document.getElementById('menu_mobile');
+    
+    if (menuDesktop) menuDesktop.innerHTML = menuHTML;
+    if (menuMobile) menuMobile.innerHTML = menuHTML;
+    
+    const contentSite = document.getElementById('Content-Site');
+    if (contentSite) contentSite.insertAdjacentHTML('beforeend', contentHTML);
 });
 
-document.addEventListener('change', (e) => {
-    if (e.target.name === 'trigger') {
-        const activeInputId = e.target.id;
-        
-        document.querySelectorAll('.menu-item-label, .menu-sub-item-label, .content').forEach(el => {
-            el.classList.remove('active');
-        });
-        
-        const activeLabel = document.querySelector(`label[for="${activeInputId}"]`);
-        if (activeLabel) activeLabel.classList.add('active');
-        
-        const activeContent = document.getElementById(`content-${activeInputId}`);
-        if (activeContent) activeContent.classList.add('active');
+// Слухач кліку по блоках сімейства wrapper з data-trigger
+document.addEventListener('click', (e) => {
+    const triggerWrapper = e.target.closest('[data-trigger]');
+    
+    if (triggerWrapper) {
+        const triggerId = triggerWrapper.dataset.trigger;
+        const targetInput = document.getElementById(triggerId);
+
+        if (targetInput) {
+            targetInput.checked = true;
+
+            document.querySelectorAll('.menu-item-wrapper, .menu-sub-item-wrapper, .content').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            document.querySelectorAll(`[data-trigger="${triggerId}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+        }
     }
 });
