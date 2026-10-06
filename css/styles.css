@@ -180,13 +180,14 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
     #button-menu {
       height: 1.5rem;
       width: 2rem;
+      margin: 0 1rem 0 0;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 0 1rem 0 0;
       position: relative;
+      cursor: pointer;
       transition: height 0.5s 0.3s;
 
       span {
@@ -238,6 +239,18 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
     
     #menu {
       position: absolute;
+      background-color: var(--color-accent);
+      width: 100%;
+      height: calc(100vh - 3.5rem);
+      top: 3.5rem;
+      right: 0;
+      margin: 0;
+      max-width: 0%;
+      overflow: hidden;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 1rem 0rem;
+      transition: max-width 0.5s ease-in-out;
     }
     
   }
