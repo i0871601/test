@@ -286,7 +286,7 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
         gap: 0;
         opacity: 1;
         visibility: visible;
-        transition: height 0.5s ease-in-out;
+        transition: max-height 0.5s ease-in-out;
 
         .label {
           margin: 0.5rem 0rem;
