@@ -283,6 +283,8 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
         overflow: hidden;
         margin: 0.5rem 0 0 0;
         padding: 0;
+        gap: 0;
+        transition: height 0.5s ease-in-out;
 
         .label {
           padding: 0.5rem 0rem;
@@ -290,10 +292,7 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
       }
     }
     .menu-group-label:hover .dropdown-content {
-      opacity: 1;
-      visibility: visible;
-      height: 100%;
-      transition-delay: 0;
+      height: 100% !important;
     }
     
   }
