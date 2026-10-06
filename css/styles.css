@@ -305,6 +305,17 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
       }
       .dropdown-content {
         padding: 0.5rem 0rem 0rem 0rem;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+      }
+
+      .label:hover {
+
+      }
+      .menu-group-label:hover div {
+        
       }
     }
   }
