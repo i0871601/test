@@ -103,12 +103,12 @@ body {
       .label {
         width: min-content;
         border-radius: 0;
+        color: var(--color-accent);
         padding: 0;
         border-bottom: 0.15rem solid var(--fon-color);
         transition: border 0.5s ease-in-out;
 
         &:hover {
-          background-color: inherit;
           color: inherit;
           border-bottom: 0.15rem solid var(--color-accent);
         }
