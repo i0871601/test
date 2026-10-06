@@ -279,20 +279,22 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 0;
+        max-height: 0;
         overflow: hidden;
         margin: 0.5rem 0 0 0;
         padding: 0;
         gap: 0;
+        opacity: 1;
+        visibility: visible;
         transition: height 0.5s ease-in-out;
 
         .label {
-          padding: 0.5rem 0rem;
+          margin: 0.5rem 0rem;
         }
       }
     }
     .menu-group-label:hover .dropdown-content {
-      height: 100% !important;
+      max-height: 100% !important;
     }
     
   }
