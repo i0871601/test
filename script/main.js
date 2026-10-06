@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
                     
                     subItemsHTML += `
-                        <div class="menu-sub-item-wrapper" data-trigger="${triggerId}">
+                        <div class="label menu-sub-item-wrapper" data-trigger="${triggerId}">
                             <a href="#${contentId}" class="menu-sub-item">${subItem.name}</a>
                         </div>\n`;
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const groupBlockHTML = `
-                <div class="menu-group-label" data-group="${groupInputId}">
+                <div class="label menu-group-label" data-group="${groupInputId}">
                     <span>${item.name}</span>
                     <div class="dropdown-content">
                         ${subItemsHTML}
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             inputsHTML += `<input type="radio" name="trigger" id="${triggerId}" class="input">\n`;
 
             const itemMenuHTML = `
-                <div class="menu-item-wrapper" data-trigger="${triggerId}">
+                <div class="label menu-item-wrapper" data-trigger="${triggerId}">
                     <a href="#${contentId}" class="menu-item">${item.name}</a>
                 </div>\n`;
 
@@ -85,6 +85,9 @@ document.addEventListener('click', (e) => {
             document.querySelectorAll(`[data-trigger="${triggerId}"]`).forEach(el => {
                 el.classList.add('active');
             });
+
+            const activeContent = document.getElementById(`content-${triggerId}`);
+            if (activeContent) activeContent.classList.add('active');
         }
     }
 });
