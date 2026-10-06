@@ -127,6 +127,11 @@ body {
       visibility: visible;
       transition-delay: 0s;
     }
+
+    .label.active:not(.dropdown-content .label) {
+      background-color: var(--color-accent);
+      color: var(--fon-color);
+    }
   }
 
   #menu_mobile {

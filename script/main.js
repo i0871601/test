@@ -78,12 +78,17 @@ document.addEventListener('click', (e) => {
         if (targetInput) {
             targetInput.checked = true;
 
-            document.querySelectorAll('.menu-item-wrapper, .menu-sub-item-wrapper, .content').forEach(el => {
+            document.querySelectorAll('.menu-item-wrapper, .menu-sub-item-wrapper, .menu-group-label, .content').forEach(el => {
                 el.classList.remove('active');
             });
 
             document.querySelectorAll(`[data-trigger="${triggerId}"]`).forEach(el => {
                 el.classList.add('active');
+
+                const parentGroup = el.closest('.menu-group-label');
+                if (parentGroup) {
+                    parentGroup.classList.add('active');
+                }
             });
 
             const activeContent = document.getElementById(`content-${triggerId}`);
