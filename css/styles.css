@@ -133,8 +133,8 @@ body {
     display: none;
   }
 }
-#menu label:has(input:checked) {
-  background-color: var(--color-accent);
+.active {
+  
 }
 
 #Content-Site {
