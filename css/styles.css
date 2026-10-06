@@ -303,6 +303,9 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
       .label {
         padding: 0.5rem 0rem;
       }
+      .dropdown-content {
+        padding: 0.5rem 0rem 0rem 0rem;
+      }
     }
   }
 }
