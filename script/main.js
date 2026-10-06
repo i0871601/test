@@ -78,7 +78,7 @@ document.addEventListener('click', (e) => {
         if (targetInput) {
             targetInput.checked = true;
 
-            document.querySelectorAll('.menu-item-wrapper, .menu-sub-item-wrapper, .menu-group-label, .content').forEach(el => {
+            document.querySelectorAll('#Text-Logo, .menu-item-wrapper, .menu-sub-item-wrapper, .menu-group-label, .content').forEach(el => {
                 el.classList.remove('active');
             });
 
