@@ -58,10 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.insertAdjacentHTML('afterbegin', inputsHTML);
     
     const menuDesktop = document.getElementById('menu');
-    const menuMobile = document.getElementById('menu_mobile');
     
     if (menuDesktop) menuDesktop.innerHTML = menuHTML;
-    if (menuMobile) menuMobile.innerHTML = menuHTML;
     
     const contentSite = document.getElementById('Content-Site');
     if (contentSite) contentSite.insertAdjacentHTML('beforeend', contentHTML);
