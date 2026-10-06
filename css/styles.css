@@ -215,37 +215,8 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
       #line3 {
         bottom: 0;
       }
-
-      #menu {
-        display: none;
-        visibility: hidden;
-      }
-
-      #menu_mobile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        position: absolute;
-        top: 3.5rem;
-        right: 0;
-        width: 100%;
-        max-width: 0%;
-        height: calc(100vh - 3.5rem);
-        background-color: var(--color-accent);
-        color: var(--fon-color);
-        box-sizing: border-box;
-        padding: 1rem 0;
-
-        .label, .dropdown-content {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          cursor: pointer;
-        }
-      }
     }
+
 
     #menu-button:checked ~ #menu_mobile {
       max-width: 100%;
@@ -266,6 +237,36 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
 
       #line3 {
         transform: rotate(-45deg);
+      }
+    }
+
+    #menu {
+      display: none;
+      visibility: hidden;
+    }
+
+    #menu_mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      position: absolute;
+      top: 3.5rem;
+      right: 0;
+      width: 100%;
+      max-width: 0%;
+      height: calc(100vh - 3.5rem);
+      background-color: var(--color-accent);
+      color: var(--fon-color);
+      box-sizing: border-box;
+      padding: 1rem 0;
+
+      .label, .dropdown-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
       }
     }
   }
