@@ -1,9 +1,11 @@
 :root {
-  --fon-color: #f8fAfC;
-  --color-accent: #0a2342;
-  --color-accent-shadow: rgba(245, 110, 15, 0.7);
-  --fon-color-2: #262626;
-  --text-color: #878787;
+  --fon-color: #e6e9ec;
+  --color-accent: #00203f;
+  --text-color: #2f2f2f;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
