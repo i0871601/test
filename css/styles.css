@@ -240,11 +240,11 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
     }
 
 
-    #menu-button:checked ~ #menu_mobile {
+    #menu-button-on:checked ~ #menu_mobile {
       max-width: 100%;
     }
 
-    #menu-button:checked ~ #button-menu #on-button-menu {
+    #menu-button-on:checked ~ #button-menu #on-button-menu {
       height: 0.35rem;
       transition: height 0.5s 0s;
       
