@@ -177,7 +177,7 @@ body:has(.input[name="trigger"]:checked) #Content-Site .active {
 }
 
 
-@media (orientation: portrait) {
+@media (orientation: portrait) or (max-width: 800px) {
   #menu-bar {
 
     #button-menu {
